@@ -1,0 +1,110 @@
+{
+    "movies": [
+      {
+        "id": 1,
+        "name": "Spider-Man: No Way Home",
+        "photo": "https://media.discordapp.net/attachments/1154210086512758835/1154219352124559530/Spider_Man_No_Way_Home-642739124-large.jpg?width=414&height=615",
+        "length": "148",
+        "genre": ["Acción", "Aventura", "Fantasía"]
+      },
+      {
+        "id": 2,
+        "name": "Titanic",
+        "photo": "https://media.discordapp.net/attachments/1154210086512758835/1154219586481307730/19870073.jpg?width=434&height=615",
+        "length": "194",
+        "genre": ["Drama", "Romance"]
+      },
+      {
+        "id": 3,
+        "name": "El Rey León",
+        "photo": "https://media.discordapp.net/attachments/1154210086512758835/1154220039717789716/image_8b5ca578.jpeg?width=410&height=615",
+        "length": "118",
+        "genre": ["Animación", "Aventura", "Drama"]
+      },
+      {
+        "id": 4,
+        "name": "Toy Story",
+        "photo": "https://media.discordapp.net/attachments/1154210086512758835/1154220454547050556/Toy_Story_4_Poster_4.png?width=415&height=615",
+        "length": "100",
+        "genre": ["Animación", "Comedia", "Romántica", "Aventura", "Comedia", "Infantil"]
+      },
+      {
+        "id": 5,
+        "name": "Avatar: The way of the Water",
+        "photo": "https://media.discordapp.net/attachments/1154210086512758835/1154220743052247080/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA._V1__1.jpg?width=866&height=1242",
+        "length": "192",
+        "genre": ["Ciencia ficción", "Aventura", "Acción", "Fantasía", "Animación"]
+      },
+      {
+        "id": 6,
+        "name": "Avengers: Endgame",
+        "photo": "",
+        "length": "181",
+        "genre": ["Acción", "Aventura", "Ciencia ficción"]
+      },
+      {
+        "id": 7,
+        "name": "The Lord of the Rings: The Fellowship of the Ring",
+        "photo": "",
+        "length": "178",
+        "genre": ["Aventura", "Fantasía"]
+      },
+      {
+        "id": 8,
+        "name": "Inception",
+        "photo": "",
+        "length": "148",
+        "genre": ["Acción", "Ciencia ficción"]
+      },
+      {
+        "id": 9,
+        "name": "Jurassic Park",
+        "photo": "",
+        "length": "127",
+        "genre": ["Acción", "Aventura", "Ciencia ficción"]
+      },
+      {
+        "id": 10,
+        "name": "The Shawshank Redemption",
+        "photo": "",
+        "length": "142",
+        "genre": ["Drama"]
+      },
+      {
+        "id": 11,
+        "name": "Interstellar",
+        "photo": "",
+        "length": "169",
+        "genre": ["Ciencia ficción", "Drama"]
+      },
+      {
+        "id": 12,
+        "name": "The Dark Knight",
+        "photo": "",
+        "length": "152",
+        "genre": ["Acción", "Drama", "Crimen"]
+      },
+      {
+        "id": 13,
+        "name": "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "photo": "",
+        "length": "143",
+        "genre": ["Acción", "Aventura", "Fantasía"]
+      },
+      {
+        "id": 14,
+        "name": "The Matrix",
+        "photo": "",
+        "length": "136",
+        "genre": ["Acción", "Ciencia ficción"]
+      },
+      {
+        "id": 15,
+        "name": "The Grand Budapest Hotel",
+        "photo": "",
+        "length": "99",
+        "genre": ["Comedia", "Drama"]
+      }
+       
+    ]
+}

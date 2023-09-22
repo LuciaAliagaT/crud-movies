@@ -1,0 +1,16 @@
+footer{
+    margin-top: 20px;
+    display: flex;
+    padding-top: 10px;
+    gap: 10px;
+    flex-direction: column;
+    background-color: rgba(188, 188, 190, 0.843);
+    flex: 0;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    color: rgb(38, 35, 35);
+}
+span{
+    font-weight: bold;
+}

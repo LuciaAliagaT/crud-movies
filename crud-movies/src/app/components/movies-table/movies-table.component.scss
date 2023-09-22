@@ -1,0 +1,27 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 20px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+.container{
+  width: 90%;
+  margin: auto;
+}
+
+.genres-container{
+  display: flex;
+  align-items: center; 
+  margin-bottom: 10px;
+}
+
+.genres-text{
+  margin-right: 10px;
+}

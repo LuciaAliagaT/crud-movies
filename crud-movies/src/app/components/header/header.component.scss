@@ -1,3 +1,8 @@
+.mat-toolbar {
+    background-color:#212121;
+    color: white; 
+}
+  
 img:hover{
     cursor: pointer;
 }
@@ -7,4 +12,28 @@ span:hover{
 mat-toolbar-row{
     display : flex;
     gap: 20px;
+    flex: auto;
+}
+
+.options{
+    justify-content: flex-end;
+}
+
+.custom-button {
+    background-color: transparent; 
+    border: 1px  solid #F44336; 
+    color:#F44336; 
+    font-size: 18px;
+    padding: 10px;
+}
+
+.custom-button:hover {
+    background-color: #F44336;
+    transition: 0.5s;
+    box-shadow: 0 0 10px #F44336;
+}
+
+.home-link:hover{
+    color: #F44336;
+    transition: 0.5s;
 }

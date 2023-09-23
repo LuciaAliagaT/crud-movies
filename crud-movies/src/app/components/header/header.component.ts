@@ -18,4 +18,7 @@ export class HeaderComponent {
   home(){
     this.router.navigateByUrl(`/home`);
   }
+  movies(){
+    this.router.navigateByUrl(`/movies`);
+  }
 }

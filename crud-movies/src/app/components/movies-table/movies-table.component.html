@@ -6,9 +6,9 @@
     </mat-form-field>
 
     <div class="genres-container">
-        <p class="genres-text">Genres: </p>
+        <p class="genres-text">Genres: </p> 
         <mat-chip-listbox>
-            <mat-chip-option *ngFor="let item of genres" (click)="searchByGenre(item)">
+            <mat-chip-option color="warn" *ngFor="let item of genres" (click)="searchByGenre(item)">
               {{ item }}
             </mat-chip-option>
         </mat-chip-listbox>

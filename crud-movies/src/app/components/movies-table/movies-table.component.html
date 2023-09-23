@@ -1,6 +1,21 @@
-<div class="container">
 
-    <mat-form-field>
+<form (submit)="onSubmit()" #movieForm="ngForm" class="form-container">
+    <mat-form-field><input matInput placeholder="Nombre" name="Name" required [(ngModel)]="movieData.name"></mat-form-field>
+    <mat-form-field><input type="text" matInput placeholder="photo" name="photo" required [(ngModel)]="movieData.photo"></mat-form-field>
+    <mat-form-field><input type="text" matInput placeholder="length" name="length" required [(ngModel)]="movieData.length"></mat-form-field>
+    <mat-form-field><input type="text" matInput placeholder="genre" name="genre" required [(ngModel)]="movieData.genre"></mat-form-field>
+    <mat-form-field><input type="text" matInput placeholder="description" name="description" required [(ngModel)]="movieData.description"></mat-form-field>    
+    <ng-container *ngIf="isEditMode; else elseTemplate">
+      <button mat-button color="primary">Update</button>&nbsp;
+      <button mat-button color="warn" (click)="cancelEdit()">Cancel</button>
+    </ng-container>&nbsp;
+    <ng-template #elseTemplate>
+      <button mat-button color="primary">Add </button>
+    </ng-template>
+  </form>
+
+<div class="container">
+    <mat-form-field class="form-filter">
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Avengers" #input>
     </mat-form-field>
@@ -9,7 +24,7 @@
         <p class="genres-text">Genres: </p> 
         <mat-chip-listbox>
             <mat-chip-option color="warn" *ngFor="let item of genres" (click)="searchByGenre(item)">
-              {{ item }}
+                {{ item }}
             </mat-chip-option>
         </mat-chip-listbox>
     </div>
@@ -33,7 +48,7 @@
             <ng-container matColumnDef="photo">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Photo </th>
                 <td mat-cell *matCellDef="let row"> 
-                    <img  aria-label="This is a photo of the movie" src="{{row.photo}}" alt="movie photo" width="100px" height="100px"> 
+                    <img  aria-label="This is a photo of the movie" src="{{row.photo}}" alt="movie photo" width="auto" height="100px"> 
                 </td>
             </ng-container>
 
@@ -48,10 +63,19 @@
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Genre </th>
                 <td mat-cell *matCellDef="let row"> {{row.genre}} </td>
             </ng-container>
-    
-            <!-- agregarmos 1 evento para el detail -->
+            
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> Actions</th>
+                <td mat-cell *matCellDef="let element">
+                    <a mat-raised-button color="accent" (click)="editMovie(element); $event.stopPropagation()"><mat-icon>edit</mat-icon></a>
+                    <a mat-raised-button color="warn" (click)="deleteMovie(element.id); $event.stopPropagation()"><mat-icon>delete</mat-icon></a>
+                </td>
+            </ng-container>
+            
+            <!-- agregamos 1 evento para el detail -->
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRow( row )"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRow(row); $event.stopPropagation()"></tr>
+            
     
             <!-- Row shown when there is no matching data. -->
             <tr class="mat-row" *matNoDataRow>

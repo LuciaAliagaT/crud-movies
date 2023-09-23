@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Movie } from 'src/app/models/movie.model';
 
+
 @Component({
   selector: 'app-movies-table',
   templateUrl: './movies-table.component.html',
@@ -21,7 +22,7 @@ export class MoviesTableComponent {
   @ViewChild('movieForm', {static: false})
   movieForm!: NgForm;
 
-  displayedColumns :string[] = ['id', 'name', 'photo', 'length', 'genre'];
+  displayedColumns = ['id', 'name', 'photo', 'length', 'genre', 'actions'];
   dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator, {static: true}) 
@@ -51,9 +52,11 @@ export class MoviesTableComponent {
     this.movieData = {} as Movie;
   }
   cancelEdit(): void {
-      this.isEditMode = false;
-      this.movieForm.resetForm();
+    this.isEditMode = false;
+    this.movieData = {} as Movie; // Restablecer los datos del formulario
+    this.movieForm.reset(); // Restablecer el estado del formulario
   }
+  
 
   ngOnInit(){
     this.dataSource.paginator = this.paginator;
@@ -92,7 +95,6 @@ export class MoviesTableComponent {
     console.log(this.dataSource.data);
   } 
 
-  // addStudent(): void{
   addMovie(): void{
     this.movieData.id = 0;
     this.moviesService.createMovie(this.movieData).subscribe((response: any) => {
@@ -124,7 +126,7 @@ export class MoviesTableComponent {
   }
 
   getRow( row:any ){
-    this.router.navigateByUrl(`/detail/${row.position}`);
+    this.router.navigateByUrl(`/detail/${row.id}`);
   }
 
 }

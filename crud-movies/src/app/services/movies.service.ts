@@ -41,7 +41,7 @@ export class MoviesService {
   //CREATE → POST
   createMovie(item: any): Observable<Movie>{
     return this.http.post<Movie>(this.base_URL, JSON.stringify(item), this.httpOptions)
-    .pipe(retry(2), catchError(this.handlerError))
+    .pipe(retry(2), catchError(this.handlerError));
   }
 
   //DELETE → DELETE

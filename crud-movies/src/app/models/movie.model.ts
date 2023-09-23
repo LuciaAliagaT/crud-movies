@@ -4,4 +4,5 @@ export interface Movie {
     photo: any;
     length: any;
     genre: any;
+    description: any;
 }

@@ -12,6 +12,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginator} from '@angular/material/paginator';
 import { MatSortModule} from '@angular/material/sort';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
     imports:[
@@ -42,6 +44,7 @@ import { MatSortModule} from '@angular/material/sort';
         MatGridListModule,
         MatPaginator,
         MatSortModule,
+        FormsModule
         
         
     ]

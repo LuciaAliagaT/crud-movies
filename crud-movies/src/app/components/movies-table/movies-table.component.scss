@@ -1,5 +1,7 @@
 table {
     width: 100%;
+    font-size: 18px;
+    background-color: #9d9d9d;
   }
   
   .mat-mdc-form-field {
@@ -9,6 +11,7 @@ table {
   
   td, th {
     width: 25%;
+    font-size: 18px;
   }
 
 .container{
@@ -18,10 +21,12 @@ table {
 
 .genres-container{
   display: flex;
-  align-items: center; 
+  flex-direction: column;
+  align-items: left; 
   margin-bottom: 10px;
 }
 
 .genres-text{
   margin-right: 10px;
+  color: white;
 }

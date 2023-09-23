@@ -1,9 +1,10 @@
-
-<p>
-    <mat-toolbar color="primary">
-        <mat-toolbar-row>
-            <span (click)="home()">Movies</span>
-        </mat-toolbar-row>
-    </mat-toolbar>
-</p>
+<mat-toolbar>
+    <mat-toolbar-row>
+      <span (click)="home()">Movies</span>
+      <mat-toolbar-row class="options">
+        <span class="home-link" (click)="home()">Home</span>
+        <button mat-button class="custom-button" (click)="movies()">Películas</button>
+      </mat-toolbar-row>
+    </mat-toolbar-row>
+</mat-toolbar>
 

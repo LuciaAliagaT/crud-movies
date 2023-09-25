@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Movie } from 'src/app/models/movie.model';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,9 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   currentIndex = 0;
+  intervalId: any;
+  
+  moviesList: Movie[] = [];
 
   images = [
     { src: 'https://media.discordapp.net/attachments/1154210086512758835/1155793346455928842/4.png'},
@@ -16,6 +22,13 @@ export class HomeComponent {
     { src: 'https://media.discordapp.net/attachments/1154210086512758835/1155793346149756969/3.png'}
   ];
 
+  constructor(private router: Router, private moviesService:MoviesService) { }
+
+  ngOninit() {
+    this.startCarousel();
+    this.getMovies();
+  }
+  
   prevSlide() {
     if (this.currentIndex > 0) {
       this.currentIndex--;
@@ -26,5 +39,22 @@ export class HomeComponent {
     if (this.currentIndex < this.images.length - 1) {
       this.currentIndex++;
     }
+  }
+
+  startCarousel() {
+    this.intervalId = setInterval(() => {
+      this.nextSlide(); 
+    }, 3000); 
+  }
+
+  movies(){
+    this.router.navigateByUrl(`/business/peliculas`);
+  }
+
+  getMovies(){
+    this.moviesService.getList().subscribe((response: any) => {
+      this.moviesList = response;
+      console.log(response);
+    })
   }
 }

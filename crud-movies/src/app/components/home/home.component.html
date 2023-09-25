@@ -14,5 +14,18 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-  </div>
+</div>
   
+<div class="home-container">
+  <span class="home-text">Películas recientes</span>
+
+  <mat-card class="example-card">
+    <mat-card-content class="movie-card" *ngFor="let movie of moviesList">
+      <img class="movie-image" [src]="movie.photo">
+      <div class="movie-info">
+        <span class="movie-title">{{ movie.name }}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>

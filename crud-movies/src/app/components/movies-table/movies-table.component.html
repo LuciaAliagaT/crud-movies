@@ -1,25 +1,34 @@
 
-<form (submit)="onSubmit()" #movieForm="ngForm" class="form-container">
-    <mat-form-field><input matInput placeholder="Nombre" name="Name" required [(ngModel)]="movieData.name"></mat-form-field>
-    <mat-form-field><input type="text" matInput placeholder="photo" name="photo" required [(ngModel)]="movieData.photo"></mat-form-field>
-    <mat-form-field><input type="text" matInput placeholder="length" name="length" required [(ngModel)]="movieData.length"></mat-form-field>
-    <mat-form-field><input type="text" matInput placeholder="genre" name="genre" required [(ngModel)]="movieData.genre"></mat-form-field>
-    <mat-form-field><input type="text" matInput placeholder="description" name="description" required [(ngModel)]="movieData.description"></mat-form-field>    
-    <ng-container *ngIf="isEditMode; else elseTemplate">
-      <button mat-button color="primary">Update</button>&nbsp;
-      <button mat-button color="warn" (click)="cancelEdit()">Cancel</button>
-    </ng-container>&nbsp;
-    <ng-template #elseTemplate>
-      <button mat-button color="primary">Add </button>
-    </ng-template>
-  </form>
+<mat-card *ngIf="isShowCard">
+    <form (submit)="onSubmit()" #movieForm="ngForm" class="form-container">
+        <mat-form-field><input matInput placeholder="Nombre" name="name" required [(ngModel)]="movieData.name"></mat-form-field>
+        <mat-form-field><input type="text" matInput placeholder="URL de Foto" name="photo" required [(ngModel)]="movieData.photo"></mat-form-field>
+        <mat-form-field><input type="text" matInput placeholder="Duración (minutos)" name="length" required [(ngModel)]="movieData.length"></mat-form-field>
+        <mat-form-field><input type="text" matInput placeholder="Género" name="genre" required [(ngModel)]="movieData.genre"></mat-form-field>
+        <mat-form-field><input type="text" matInput placeholder="Descripción" name="description" required [(ngModel)]="movieData.description"></mat-form-field>
+
+        <ng-container *ngIf="isEditMode; else elseTemplate">
+          <button mat-button color="primary">Update</button>&nbsp;
+          <button mat-button color="warn" (click)="cancelEdit()">Cancel</button>
+        </ng-container>&nbsp;
+        <ng-template #elseTemplate>
+          <button mat-button color="primary"> Add </button>
+          <button mat-button color="warn" (click)="cancelAdd()">Cancel</button>
+        </ng-template>
+    </form>
+</mat-card>
 
 <div class="container">
-    <mat-form-field class="form-filter">
-        <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Avengers" #input>
-    </mat-form-field>
-
+    <div class="head-container"> 
+        <mat-form-field class="form-filter">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Avengers" #input>
+        </mat-form-field>
+        <button mat-fab color="warn" (click)="showCard()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+   
     <div class="genres-container">
         <p class="genres-text">Genres: </p> 
         <mat-chip-listbox>

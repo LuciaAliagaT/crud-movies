@@ -1,7 +1,7 @@
 .example-card {
     max-width: 400px;
     margin: 40px auto;
-    
+
 }
 
 .example-header-image {
@@ -14,7 +14,9 @@
 .btn-container{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 1rem;
+    flex-direction: column;
 }
 .custom-button {
     background-color: transparent; 
@@ -22,6 +24,8 @@
     color:#F44336; 
     font-size: 18px;
     padding: 10px;
+    width: max-content;
+    margin-bottom: 10px;
 }
 
 .custom-button:hover {

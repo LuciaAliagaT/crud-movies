@@ -27,8 +27,8 @@ export class MoviesService {
       ); 
   }
 
-  getList(): Observable<Movie[]>{
-    return this.http.get<Movie[]>(this.base_URL)
+  getList(): Observable<Movie>{
+    return this.http.get<Movie>(this.base_URL)
     .pipe(retry(2), catchError(this.handlerError))
   }
 

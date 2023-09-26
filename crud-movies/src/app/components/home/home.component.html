@@ -15,17 +15,19 @@
       </button>
     </div>
 </div>
-  
-<div class="home-container">
-  <span class="home-text">Películas recientes</span>
+<div class="container-principal-movies">
 
-  <mat-card class="example-card">
-    <mat-card-content class="movie-card" *ngFor="let movie of moviesList">
-      <img class="movie-image" [src]="movie.photo">
-      <div class="movie-info">
-        <span class="movie-title">{{ movie.name }}</span>
+  <div class="container">
+    <span class="home-text">Películas recientes</span>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let movie of moviesList">
+        <div class="card mb-4">
+          <div class="card-body"> 
+            <img src="{{ movie.photo }}" class="card-img-top" alt="" width="auto" height="350px">
+            <h5 class="card-title">{{ movie.name }}</h5>
+          </div>
+        </div>
       </div>
-    </mat-card-content>
-  </mat-card>
-
+    </div>
+  </div> 
 </div>

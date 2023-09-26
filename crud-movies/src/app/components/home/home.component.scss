@@ -25,8 +25,25 @@
     cursor: pointer;
   }
   
-  .home-container{
-    font-size: 20px;
+ 
+  
+  .container{
+    margin: 20px;
+    justify-content: center;
+  }
+
+  .home-text{
     color: white;
-    padding: 20px;
+    font-size: 20px;
+  }
+
+  .card-title{
+    margin-top:10px;
+    font-weight: bold;
+    font-size: medium;
+    text-align: center;
+  }
+  .container-principal-movies{
+    display: flex;
+    justify-content: center;
   }
